@@ -7,22 +7,17 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class MovieFactory extends Factory
 {
-    /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
     protected $model = Movie::class;
 
-    /**
-     * Define the model's default state.
-     *
-     * @return array
-     */
     public function definition()
     {
+        $faker = \Faker\Factory::create();
+        $faker->addProvider(new \Xylis\FakerCinema\Provider\Movie($faker));
+
         return [
-            //
+            'title' => $faker->movie,
+            'description' => $faker->overview,
+            'genre' => $faker->movieGenre,
         ];
     }
 }
