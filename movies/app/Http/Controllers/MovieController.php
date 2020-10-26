@@ -16,12 +16,22 @@ class MovieController extends Controller
 
     public function create()
     {
-        //
+        return view('movie.create');
     }
 
     public function store(Request $request)
     {
-        //
+        $request->validate(
+            [
+                'title' => 'required|min:2|max:32',
+                'description' => 'required|min:2|max:500',
+                'genre' => 'required|min:2|max:32',
+            ]
+        );
+
+        Movie::create($request->all());
+
+        return redirect()->route('index');
     }
 
     public function show(Movie $movie)
