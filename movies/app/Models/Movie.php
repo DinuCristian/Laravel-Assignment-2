@@ -8,4 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Movie extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'description',
+        'genre'
+    ];
+
+    public function getPathAttribute()
+    {
+        return $this->path();
+    }
+
+    public function path($append = '')
+    {
+        return '/movie/' . $this->id . '/' . $append;
+    }
 }

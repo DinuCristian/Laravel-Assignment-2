@@ -7,3 +7,5 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [MovieController::class, 'index'])->name('index');
+
+Route::get('/movie/{movie}', [MovieController::class, 'show']);

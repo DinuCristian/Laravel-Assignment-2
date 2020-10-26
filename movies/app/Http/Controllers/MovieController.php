@@ -26,7 +26,7 @@ class MovieController extends Controller
 
     public function show(Movie $movie)
     {
-        //
+        return view('movie.show', compact('movie'));
     }
 
     public function edit(Movie $movie)
