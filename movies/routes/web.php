@@ -12,3 +12,6 @@ Route::get('/movie/{movie}', [MovieController::class, 'show']);
 
 Route::get('/movie', [MovieController::class, 'create']);
 Route::post('/movie/', [MovieController::class, 'store']);
+
+Route::get('/movie/{movie}/edit', [MovieController::class, 'edit']);
+Route::patch('/movie/{movie}/', [MovieController::class, 'update']);
