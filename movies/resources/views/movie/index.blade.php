@@ -10,6 +10,12 @@
                         {{ $movie->title }} : {{ $movie->genre }} : <a href="{{ $movie->path }}">Details</a> :
                         <a href="/movie/{{ $movie->id }}/edit">Edit</a>
                     </li>
+
+                    <form class="inline" method="post" action="{{ $movie -> path }}">
+                        @method ('DELETE')
+                        @csrf
+                        <button type="submit">Delete</button>
+                    </form>
                 @endforeach
             </ul>
             {{ $movies -> links () }}

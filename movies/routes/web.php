@@ -9,6 +9,7 @@ Auth::routes();
 Route::get('/', [MovieController::class, 'index'])->name('index');
 
 Route::get('/movie/{movie}', [MovieController::class, 'show']);
+Route::delete('/movie/{movie}', [MovieController::class, 'destroy']);
 
 Route::get('/movie', [MovieController::class, 'create']);
 Route::post('/movie/', [MovieController::class, 'store']);
