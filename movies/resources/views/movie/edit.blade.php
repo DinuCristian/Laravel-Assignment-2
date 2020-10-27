@@ -1,45 +1,81 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-right">
-                <a class="btn btn-primary" href="/"> Back</a>
+    <main class="sm:container sm:mx-auto sm:mt-10">
+        <div class="w-full sm:px-6">
+            <div class="flex justify-between">
+                <div class="text-4xl mb-8">
+                    <h1>{{ 'Edit Movie' }}</h1>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <form method="POST" action="/movie/{{ $movie->id }}/">
-        @method ('PATCH')
-        @csrf
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Title:</strong>
-                    <label>
-                        <input type="text" name="title" class="form-control" placeholder="Title" value="{{ $movie->title }}">
-                    </label>
+            <form method="post" action="{{ $movie->path }}">
+                @method ('PATCH')
+                @csrf
+
+                <div class="flex flex-wrap">
+                    <div class="w-full">
+                        <label class="block" for="name">
+                            {{ 'Title' }}
+                        </label>
+
+                        <input class="block w-2/5 mt-2 @error ('title') border border-red-500 @enderror"
+                               type="text" name="title" data-lpignore="true" autocomplete="off"
+                               value="{{ $movie->title }}"/>
+
+                        @error ('title')
+                        <div class="alert-message text-red-600">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Description:</strong>
-                    <label>
-                        <textarea class="form-control" style="height:150px" name="description" placeholder="Description">{{ $movie->description }}</textarea>
-                    </label>
+
+                <div class="flex flex-wrap mt-8">
+                    <div class="w-full">
+                        <label class="block" for="name">
+                            {{ 'Genre' }}
+                        </label>
+
+                        <input class="block w-2/5 mt-2 @error ('genre') border border-red-500 @enderror"
+                               type="text" name="genre" data-lpignore="true" autocomplete="off"
+                               value="{{ $movie->genre }}"/>
+
+                        @error ('genre')
+                        <div class="alert-message text-red-600">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Genre:</strong>
-                    <label>
-                        <textarea class="form-control" style="height:150px" name="genre" placeholder="Genre">{{ $movie->genre }}</textarea>
-                    </label>
+
+                <div class="flex flex-wrap mt-8">
+                    <div class="w-full">
+                        <label class="block" for="description">{{ 'Description' }}</label>
+
+                        <textarea class="block w-8/12 mt-2 @error ('description') border border-red-500 @enderror"
+                                  rows="10" name="description"
+                                  placeholder="Movie's description">{{ $movie->description }}</textarea>
+
+                        @error ('description')
+                        <div class="alert-message text-red-600">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+
+                <div class="flex flex-wrap mt-8">
+                    <div class="w-full">
+                        <button class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                type="submit">{{ 'Save' }}</button>
+                        <a href="/">
+                            <button class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                    type="button">{{ 'Cancel' }}</button>
+                        </a>
+                    </div>
+                </div>
+            </form>
         </div>
-    </form>
+    </main>
 @endsection
