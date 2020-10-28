@@ -24,4 +24,9 @@ class Movie extends Model
     {
         return '/movie/' . $this->id . '/' . $append;
     }
+
+    public function imageUrl($width = 448, $height = 299)
+    {
+        return Helpers::fakeImageUrl($this->id, $width, $height);
+    }
 }

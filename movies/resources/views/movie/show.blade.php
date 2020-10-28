@@ -24,7 +24,7 @@
             <div class="flex flex-wrap">
                 <div class="md:flex mt-10">
                     <div class="md:flex-shrink-0">
-                        <img class="rounded-lg md:w-100" src="https://picsum.photos/id/{{ $movie->id }}/448/299"
+                        <img class="rounded-lg md:w-100" src="{{ $movie->imageUrl() }}"
                              width="448" height="299"
                              alt="This is the poster of {{ $movie->title }} movie.">
                     </div>
