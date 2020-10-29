@@ -5,7 +5,7 @@
         <div class="w-full sm:px-6">
             <div class="flex justify-between">
                 <div class="text-4xl mb-8">
-                    <h1>{{ 'Movie Details' }}</h1>
+                    <h1>{{ __("Movie Details") }}</h1>
                 </div>
                 <div>
                     <div class="mt-2 flex items-center text.black">
@@ -15,7 +15,7 @@
                                 <path
                                         d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
                             </svg>
-                            <span>{{ 'Home' }}</span>
+                            <span>{{ __("Home") }}</span>
                         </a>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                     <div class="md:flex-shrink-0">
                         <img class="rounded-lg md:w-100" src="{{ $movie->imageUrl() }}"
                              width="448" height="299"
-                             alt="This is the poster of {{ $movie->title }} movie.">
+                             alt="{{ __("This is the poster of :attribute movie.", ['attribute' => $movie->title]) }}">
                     </div>
 
                     <div class="mt-4 md:mt-0 md:ml-20">

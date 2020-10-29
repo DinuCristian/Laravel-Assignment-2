@@ -5,7 +5,7 @@
         <div class="w-full sm:px-6">
             <div class="flex justify-between">
                 <div class="text-4xl mb-8">
-                    <h1>{{ 'Edit Movie' }}</h1>
+                    <h1>{{ __("Edit Movie") }}</h1>
                 </div>
             </div>
 
@@ -16,7 +16,7 @@
                 <div class="flex flex-wrap">
                     <div class="w-full">
                         <label class="block" for="name">
-                            {{ 'Title' }}
+                            {{ __("Title") }}
                         </label>
 
                         <input class="block w-2/5 mt-2 @error ('title') border border-red-500 @enderror"
@@ -34,7 +34,7 @@
                 <div class="flex flex-wrap mt-8">
                     <div class="w-full">
                         <label class="block" for="name">
-                            {{ 'Genre' }}
+                            {{ __("Genre") }}
                         </label>
 
                         <input class="block w-2/5 mt-2 @error ('genre') border border-red-500 @enderror"
@@ -51,7 +51,7 @@
 
                 <div class="flex flex-wrap mt-8">
                     <div class="w-full">
-                        <label class="block" for="description">{{ 'Description' }}</label>
+                        <label class="block" for="description">{{ __("Description") }}</label>
 
                         <textarea class="block w-8/12 mt-2 @error ('description') border border-red-500 @enderror"
                                   rows="10" name="description"
@@ -68,10 +68,10 @@
                 <div class="flex flex-wrap mt-8">
                     <div class="w-full">
                         <button class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                                type="submit">{{ 'Save' }}</button>
+                                type="submit">{{ __("Save") }}</button>
                         <a href="/">
                             <button class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                                    type="button">{{ 'Cancel' }}</button>
+                                    type="button">{{ __("Cancel") }}</button>
                         </a>
                     </div>
                 </div>

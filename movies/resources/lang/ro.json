@@ -1,0 +1,24 @@
+{
+    "All Movies": "Toate filmele",
+    "Add New Movie": "Adaugă un film nou",
+    "Edit": "Editează",
+    "Delete": "Șterge",
+    "Add a Movie": "Adaugă un film",
+    "Title": "Titlu",
+    "e.g. Titanic": "ex Titanic",
+    "Genre": "Tipul filmului",
+    "e.g. Drama": "ex Dramă",
+    "Description": "Descriere",
+    "Save": "Salvează",
+    "Cancel": "Anulează",
+    "Edit Movie": "Editează fimul",
+    "Home": "Acasă",
+    "Logout": "Deloghează-te",
+    "Login": "Loghează-te",
+    "Register": "Înregistrează-te",
+    "E-Mail Address": "Adresa e-mail",
+    "Movie Details": "Detalii film",
+    "e.g. A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.":
+    "ex O aristocrată de 17 ani se îndrăgostește de un artist drăguț dar sărac la bordul luxuriosului și nefericitului R.M.S. Titanic.",
+    "This is the poster of :attribute movie." : "Acesta este posterul filmului :attribute."
+}
