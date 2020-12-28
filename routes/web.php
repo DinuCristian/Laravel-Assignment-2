@@ -1,15 +1,20 @@
 <?php
 
+use App\Http\Controllers\Auth\GithubController;
 use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Auth::routes();
 
 Route::get('lang/{locale}', function ($locale) {
     session()->put('locale', $locale);
     return redirect()->back();
 });
+
+Auth::routes();
+
+Route::get('/auth/github/redirect', [GithubController::class, 'redirect'])->name('github.redirect');
+Route::get('/auth/github/callback', [GithubController::class, 'callback'])->name('github.callback');
 
 Route::middleware('localization')->group(
     function () {
