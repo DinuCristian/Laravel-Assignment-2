@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\GithubController;
 use App\Http\Controllers\Auth\GoogleController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,8 @@ Route::middleware('localization')->group(
 
                 Route::get('/movie', [MovieController::class, 'create']);
                 Route::post('/movie/', [MovieController::class, 'store']);
+
+                Route::get ('/movie/{movie}/email', [MailController::class,'sendMovieDetails']);
 
                 Route::get('/movie/{movie}/edit', [MovieController::class, 'edit']);
                 Route::patch('/movie/{movie}/', [MovieController::class, 'update']);
