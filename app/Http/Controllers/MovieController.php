@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use Illuminate\Http\Request;
+use Spatie\QueryBuilder\AllowedFilter;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class MovieController extends Controller
 {
     public function index()
     {
-        $movies = Movie::query()->paginate(6);
+        $movies = QueryBuilder::for(Movie::class)->allowedFilters(['title', AllowedFilter::exact('genre')])->paginate(6);
+        $genres = Movie::select('genre')->distinct()->get();
 
-        return view('movie.index', ['movies' => $movies]);
+        return view('movie.index', ['movies' => $movies], ['genres' => $genres]);
     }
 
     public function create()
@@ -64,5 +67,10 @@ class MovieController extends Controller
         $movie->delete();
 
         return redirect()->route('index');
+    }
+
+    public function search(Request $request)
+    {
+        return redirect('/?filter[title]=' . $request->title . '&filter[genre]=' . $request->genre);
     }
 }
