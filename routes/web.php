@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\GithubController;
 use App\Http\Controllers\Auth\GoogleController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\MovieController;
 use Illuminate\Support\Facades\Auth;
@@ -39,6 +40,9 @@ Route::middleware('localization')->group(
                 Route::get ('/movie/{movie}/email', [MailController::class,'sendMovieDetails']);
 
                 Route::get('/search', [MovieController::class, 'search']);
+
+                Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');
+                Route::post('/reply/store', [CommentController::class, 'replyStore'])->name('reply.add');
             }
         );
     }

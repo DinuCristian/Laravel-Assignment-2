@@ -52,6 +52,28 @@
                     </div>
                 </div>
             </div>
+
+            <div class="mt-10">
+                <div class="text-2xl mb-8">
+                    <h1>Comments</h1>
+                </div>
+                @include('partials._comment_replies', ['comments' => $movie->comments, 'movie_id' => $movie->id])
+                <div class="mt-4">
+                    <hr/>
+                </div>
+                <form method="post" action="{{ route('comment.add') }}">
+                    @csrf
+                    <div class="form-group mt-4">
+                        <textarea type="text" name="comment_comment" class="form-control" rows="3" cols="40"></textarea>
+                        <input type="hidden" name="movie_id" value="{{ $movie->id }}"/>
+                    </div>
+                    <div class="form-group mt-2">
+                        <button class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
+                            {{ __("Add Comment") }}
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </main>
 @endsection
