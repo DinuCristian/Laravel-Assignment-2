@@ -26,15 +26,15 @@
                     <div class="md:flex-shrink-0">
                         <img class="rounded-lg md:w-100" src="{{ $movie->imageUrl() }}"
                              width="448" height="299"
-                             alt="{{ __("This is the poster of :attribute movie.", ['attribute' => $movie->title]) }}">
+                             alt="{{ __("This is the poster of :attribute movie.", ['attribute' => Translator::translate($movie->title)]) }}">
                     </div>
 
                     <div class="mt-4 md:mt-0 md:ml-20">
                         <div class="uppercase tracking-wide text-sm text-indigo-600 font-bold">
-                            <p>{{ $movie->title }}</p>
+                            <p>{{ Translator::translate($movie->title) }}</p>
                         </div>
-                        <p class="block mt-1 text-lg leading-tight font-semibold text-gray-900">{{ $movie->genre }}</p>
-                        <p class="mt-2 text-gray-600">{{ $movie->description }}</p>
+                        <p class="block mt-1 text-lg leading-tight font-semibold text-gray-900">{{ Translator::translate($movie->genre) }}</p>
+                        <p class="mt-2 text-gray-600">{{ Translator::translate($movie->description) }}</p>
 
                         <div class="ml-4">
                             <div class="mt-2 flex items-center text.black">
@@ -55,7 +55,7 @@
 
             <div class="mt-10">
                 <div class="text-2xl mb-8">
-                    <h1>Comments</h1>
+                    <h1>{{ __("Comments") }}</h1>
                 </div>
                 @include('partials._comment_replies', ['comments' => $movie->comments, 'movie_id' => $movie->id])
                 <div class="mt-4">
@@ -67,7 +67,7 @@
                         <textarea type="text" name="comment_comment" class="form-control" rows="3" cols="40"></textarea>
                         <input type="hidden" name="movie_id" value="{{ $movie->id }}"/>
                     </div>
-                    <div class="form-group mt-2">
+                    <div class="form-group mt-2 mb-2">
                         <button class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
                             {{ __("Add Comment") }}
                         </button>

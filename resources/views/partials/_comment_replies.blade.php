@@ -5,7 +5,7 @@
 </style>
 @foreach($comments as $comment)
     <div class="display-comment mt-4">
-        <strong>{{ $comment->user->name }}</strong>: {{ $comment->comment }}
+        <strong>{{ $comment->user->name }}</strong>: {{ Translator::translate($comment->comment) }}
         <form method="post" action="{{ route('reply.add') }}">
             @csrf
             <div class="form-group mt-2">

@@ -20,5 +20,15 @@
     "Movie Details": "Detalii film",
     "e.g. A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.":
     "ex O aristocrată de 17 ani se îndrăgostește de un artist drăguț dar sărac la bordul luxuriosului și nefericitului R.M.S. Titanic.",
-    "This is the poster of :attribute movie." : "Acesta este posterul filmului :attribute."
+    "This is the poster of :attribute movie." : "Acesta este posterul filmului :attribute.",
+    "Search" : "Caută",
+    "Search for a title" : "Caută un titlu",
+    "Select an option" : "Selectează o opțiune",
+    "Email Details" : "Trimite email cu detaliile",
+    "Comments" : "Comentarii",
+    "Reply" : "Răspunde",
+    "Add Comment" : "Adaugă comentariu",
+    "Dear" : "Dragă",
+    "Best Wishes" : "Toate cele bune",
+    "All genres" : "Toate genurile"
 }

@@ -14,7 +14,7 @@
 @yield('content')
 
 <p>
-    Best Wishes,
+    {{ __('Best Wishes') }},
 </p>
 
 <p style="font-family: cursive; font-size: x-large;">

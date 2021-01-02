@@ -29,7 +29,7 @@
                         <div class="mt-2">
                             <input class="h-10"
                                    type="text" name="title" data-lpignore="true" autocomplete="off" size="30"
-                                   placeholder="  Search for a title"/>
+                                   placeholder="  {{ __("Search for a title") }}"/>
                         </div>
                         <div class="">
                         </div>
@@ -46,9 +46,9 @@
                                 }
                             </style>
                             <select x-cloak id="select">
-                                <option value="" selected="selected">All genres</option>
+                                <option value="" selected="selected">{{ __('All genres') }}</option>
                                 @foreach($genres as $genre)
-                                    <option value="{{$genre->genre}}">{{$genre->genre}}</option>
+                                    <option value="{{$genre->genre}}">{{ Translator::translate($genre->genre )}}</option>
                                 @endforeach
                             </select>
 
@@ -78,7 +78,7 @@
                                                     </div>
                                                     </template>
                                                     <div x-show="selected.length    == 0" class="flex-1">
-                                                        <input placeholder="Select a option"
+                                                        <input placeholder="{{ __("Select an option") }}"
                                                                class="bg-transparent p-1 px-2 appearance-none outline-none h-full w-full text-gray-800"
                                                                x-bind:value="selectedValues()">
                                                     </div>
@@ -200,10 +200,10 @@
 
                             <div class="mt-4 md:mt-0 md:ml-6">
                                 <div class="uppercase tracking-wide text-sm text-indigo-600 font-bold">
-                                    <a href="{{ $movie->path }}">{{ $movie->title }}</a>
+                                    <a href="{{ $movie->path }}">{{ Translator::translate($movie->title) }}</a>
                                 </div>
-                                <p class="block mt-1 text-lg leading-tight font-semibold text-gray-900">{{ $movie->genre }}</p>
-                                <p class="mt-2 text-gray-600">{{ $movie->description }}</p>
+                                <p class="block mt-1 text-lg leading-tight font-semibold text-gray-900">{{ Translator::translate($movie->genre) }}</p>
+                                <p class="mt-2 text-gray-600">{{ Translator::translate($movie->description) }}</p>
 
                                 <div class="md:flex">
                                     <div class="mt-2 ml-4 items-center text-green-700">

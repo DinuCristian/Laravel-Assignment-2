@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
+use Translator;
+
 
 class MovieController extends Controller
 {
@@ -71,6 +74,11 @@ class MovieController extends Controller
 
     public function search(Request $request)
     {
-        return redirect('/?filter[title]=' . $request->title . '&filter[genre]=' . $request->genre);
+        $title = $request->title;
+        if ('en' != App::getLocale()) {
+            $title = Translator::translate($title, 'en');
+        }
+
+        return redirect('/?filter[title]=' . $title . '&filter[genre]=' . $request->genre);
     }
 }
